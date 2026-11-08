@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato - Kauã Silva Mattoso</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <header>
+    <h1>Fale comigo</h1>
+    <p>Envie uma mensagem através do formulário abaixo</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="curriculo.html">Currículo</a></li>
+      <li><a href="formulario.html" aria-current="page">Contato</a></li>
+      <li><a href="multimidia.html">Multimídia</a></li>
+      <li><a href="graficos.html">Gráficos</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <section id="formulario-contato">
+      <h2>Formulário de contato</h2>
+
+      <div id="feedback-form" role="status" aria-live="polite" class="feedback" hidden></div>
+
+      <form id="form-contato" action="#" method="post" novalidate>
+
+        <fieldset>
+          <legend>Dados pessoais</legend>
+
+          <div>
+            <label for="nome">Nome completo *</label>
+            <input
+              type="text"
+              id="nome"
+              name="nome"
+              placeholder="Digite seu nome completo"
+              minlength="3"
+              required
+            >
+          </div>
+
+          <div>
+            <label for="email">E-mail *</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="seuemail@exemplo.com"
+              required
+            >
+          </div>
+
+          <div>
+            <label for="telefone">Telefone</label>
+            <input
+              type="tel"
+              id="telefone"
+              name="telefone"
+              placeholder="(11) 90000-0000"
+              pattern="\(\d{2}\)\s?\d{4,5}-\d{4}"
+              title="Use o formato (11) 90000-0000"
+            >
+          </div>
+
+          <div>
+            <label for="nascimento">Data de nascimento</label>
+            <input
+              type="date"
+              id="nascimento"
+              name="nascimento"
+            >
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Sobre o contato</legend>
+
+          <div>
+            <label for="assunto">Assunto *</label>
+            <select id="assunto" name="assunto" required>
+              <option value="">Selecione um assunto</option>
+              <option value="oportunidade">Oportunidade de trabalho</option>
+              <option value="duvida">Dúvida sobre projeto</option>
+              <option value="parceria">Proposta de parceria</option>
+              <option value="outro">Outro assunto</option>
+            </select>
+          </div>
+
+          <div>
+            <span>Como prefere ser contatado? *</span>
+            <div class="campo-radio">
+              <input type="radio" id="contato-email" name="preferencia" value="email" required>
+              <label for="contato-email">E-mail</label>
+            </div>
+            <div class="campo-radio">
+              <input type="radio" id="contato-telefone" name="preferencia" value="telefone">
+              <label for="contato-telefone">Telefone</label>
+            </div>
+          </div>
+
+          <div>
+            <label for="urgencia">Nível de urgência (1 a 5)</label>
+            <input
+              type="number"
+              id="urgencia"
+              name="urgencia"
+              min="1"
+              max="5"
+              step="1"
+              value="3"
+            >
+          </div>
+
+          <div>
+            <label for="mensagem">Mensagem *</label>
+            <textarea
+              id="mensagem"
+              name="mensagem"
+              rows="5"
+              placeholder="Escreva sua mensagem aqui..."
+              minlength="10"
+              required
+            ></textarea>
+          </div>
+
+          <div class="campo-checkbox">
+            <input type="checkbox" id="termos" name="termos" required>
+            <label for="termos">Concordo com o uso dos meus dados para retorno de contato *</label>
+          </div>
+        </fieldset>
+
+        <button type="submit">Enviar mensagem</button>
+
+      </form>
+    </section>
+
+    <section id="historico">
+      <h2>Mensagens enviadas neste navegador</h2>
+      <p>As mensagens ficam salvas apenas no seu navegador (localStorage).</p>
+      <ul id="lista-mensagens" class="lista-mensagens"></ul>
+      <p id="sem-mensagens">Nenhuma mensagem enviada ainda.</p>
+      <button type="button" id="limpar-historico" class="btn-secundario" hidden>Apagar histórico</button>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Kauã Silva Mattoso. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="js/scripts.js"></script>
+
+</body>
+</html>
