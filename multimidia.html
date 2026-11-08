@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multimídia - Kauã Silva Mattoso</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <header>
+    <h1>Multimídia</h1>
+    <p>Vídeo, áudio e conteúdo incorporado</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="curriculo.html">Currículo</a></li>
+      <li><a href="formulario.html">Contato</a></li>
+      <li><a href="multimidia.html" aria-current="page">Multimídia</a></li>
+      <li><a href="graficos.html">Gráficos</a></li>
+    </ul>
+  </nav>
+
+  <main class="layout-grid">
+
+    <section id="video">
+      <h2>Vídeo de apresentação</h2>
+      <article class="midia-item">
+        
+        <video controls preload="metadata" >
+          <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+          Seu navegador não suporta a exibição de vídeos.
+          <a href="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4">
+            Baixe o vídeo aqui.
+          </a>
+        </video>
+      </article>
+    </section>
+
+    <section id="audio">
+      <h2>Áudio</h2>
+      <article class="midia-item">
+        
+        <audio controls preload="metadata">
+          <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3" type="audio/mpeg">
+          Seu navegador não suporta a reprodução de áudio.
+          <a href="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3">
+            Baixe o áudio aqui.
+          </a>
+        </audio>
+      </article>
+    </section>
+
+    <section id="mapa" class="ocupa-tudo">
+      <h2>Localização</h2>
+      <article class="midia-item">
+        
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=-46.4000%2C-23.5300%2C-46.3300%2C-23.4700&layer=mapnik"
+          title="Mapa da região de Poá, São Paulo"
+          loading="lazy">
+        </iframe>
+      </article>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Kauã Silva Mattoso. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="js/scripts.js"></script>
+
+</body>
+</html>

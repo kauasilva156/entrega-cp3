@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gráficos - Kauã Silva Mattoso</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <header>
+    <h1>Gráficos</h1>
+    <p>Visualizações feitas com Canvas e SVG</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="curriculo.html">Currículo</a></li>
+      <li><a href="formulario.html">Contato</a></li>
+      <li><a href="multimidia.html">Multimídia</a></li>
+      <li><a href="graficos.html" aria-current="page">Gráficos</a></li>
+    </ul>
+  </nav>
+
+  <main class="layout-grid">
+
+    <section id="grafico-canvas">
+      <h2>Cursos concluídos por ano (Canvas)</h2>
+      <article>
+        
+        <canvas id="grafico-cursos" width="600" height="320"
+          role="img"
+          aria-label="Gráfico de barras: 1 curso em 2021, 2 cursos em 2022, 1 curso em 2024 e 1 curso em 2025">
+        </canvas>
+      </article>
+    </section>
+
+    <section id="grafico-svg">
+      <h2>Nível de conhecimento (SVG)</h2>
+      <article>
+        
+
+        <svg class="grafico-svg" width="500" height="220" viewBox="0 0 500 220"
+          role="img" aria-labelledby="titulo-svg desc-svg">
+          <title id="titulo-svg">Nível de conhecimento em ferramentas</title>
+          <desc id="desc-svg">
+            Power BI 80%, Pacote Office 90%, Google Cloud 60%, HTML e CSS 70%
+          </desc>
+
+          <text x="10" y="25" class="rotulo-svg">Power BI</text>
+          <rect class="barra-svg" x="120" y="10" width="160" height="20" fill="#004080"></rect>
+
+          <text x="10" y="65" class="rotulo-svg">Pacote Office</text>
+          <rect class="barra-svg" x="120" y="50" width="180" height="20" fill="#0066cc"></rect>
+
+          <text x="10" y="105" class="rotulo-svg">Google Cloud</text>
+          <rect class="barra-svg" x="120" y="90" width="120" height="20" fill="#3399ff"></rect>
+
+          <text x="10" y="145" class="rotulo-svg">HTML e CSS</text>
+          <rect class="barra-svg" x="120" y="130" width="140" height="20" fill="#66b2ff"></rect>
+
+          <line x1="120" y1="0" x2="120" y2="160" stroke="#ccc" stroke-width="1"></line>
+        </svg>
+      </article>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Kauã Silva Mattoso. Todos os direitos reservados.</p>
+  </footer>
+
+
+  <script src="js/scripts.js"></script>
+
+</body>
+</html>
