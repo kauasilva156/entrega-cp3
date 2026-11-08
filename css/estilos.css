@@ -1,0 +1,687 @@
+/* =========================================
+   RESET BÁSICO E CONFIGURAÇÕES GERAIS
+   Abordagem mobile-first: os estilos base
+   valem para telas pequenas e as media
+   queries (min-width) ampliam o layout.
+========================================= */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: #2b2b2b;
+  background-color: #f5f7fa;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #004080;
+}
+
+/* Imagens e mídias responsivas */
+img,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+audio {
+  width: 100%;
+}
+
+address {
+  font-style: normal;
+  word-wrap: break-word;
+}
+
+/* =========================================
+   CABEÇALHO E NAVEGAÇÃO (FLEXBOX)
+========================================= */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #004080;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0 0 0.3rem 0;
+  font-size: 1.5rem;
+}
+
+header p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #d8e6ff;
+}
+
+nav {
+  background-color: #003366;
+}
+
+/* Mobile: itens empilhados, ocupando toda a largura */
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.2rem;
+  margin: 0;
+  padding: 0.5rem 1rem;
+}
+
+nav a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+  padding: 0.6rem 0.2rem;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  color: #ffcc00;
+  border-bottom: 2px solid #ffcc00;
+}
+
+nav a[aria-current="page"] {
+  border-bottom: 2px solid #ffcc00;
+  color: #ffcc00;
+}
+
+/* =========================================
+   CONTEÚDO PRINCIPAL
+========================================= */
+main {
+  max-width: 1000px;
+  margin: 1rem auto;
+  padding: 0 1rem;
+}
+
+section {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+section h2 {
+  color: #004080;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 0.4rem;
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+article {
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+article:last-child {
+  margin-bottom: 0;
+}
+
+article:hover,
+article:focus-within {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================================
+   LAYOUT EM GRID
+   Mobile: 1 coluna. A partir de 768px: 2 colunas.
+========================================= */
+.layout-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.layout-grid > section {
+  min-width: 0;
+  margin-bottom: 0;
+}
+
+/* =========================================
+   FLEXBOX EM SEÇÕES
+========================================= */
+/* Atalhos de navegação (página inicial) */
+.atalhos {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1rem 0 0 0;
+  padding: 0;
+}
+
+.atalhos li {
+  flex: 1 1 140px;
+}
+
+.atalhos a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  color: #fff;
+  background-color: #004080;
+  padding: 0.6rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.atalhos a:hover,
+.atalhos a:focus-visible {
+  background-color: #002b57;
+}
+
+/* Qualificações em "etiquetas" (currículo) */
+.etiquetas {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.etiquetas li {
+  flex: 1 1 100%;
+  background-color: #f2f6fb;
+  border-left: 4px solid #004080;
+  padding: 0.5rem 0.8rem;
+  border-radius: 4px;
+}
+
+/* =========================================
+   TABELAS
+========================================= */
+.tabela-rolagem {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  min-width: 480px;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+caption {
+  text-align: left;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+th,
+td {
+  border: 1px solid #ccc;
+  padding: 0.6rem;
+  text-align: left;
+}
+
+thead th {
+  background-color: #004080;
+  color: #fff;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f6fb;
+}
+
+/* =========================================
+   FORMULÁRIO (GRID)
+========================================= */
+form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+fieldset {
+  min-width: 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+fieldset > div {
+  margin-bottom: 1rem;
+}
+
+fieldset > div:last-child {
+  margin-bottom: 0;
+}
+
+legend {
+  font-weight: bold;
+  color: #004080;
+  padding: 0 0.5rem;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+button:focus-visible {
+  outline: 2px solid #004080;
+  outline-offset: 2px;
+}
+
+.campo-radio,
+.campo-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: normal;
+}
+
+.campo-radio label,
+.campo-checkbox label {
+  margin-bottom: 0;
+  font-weight: normal;
+}
+
+.campo-radio input,
+.campo-checkbox input {
+  width: auto;
+}
+
+button {
+  background-color: #004080;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #002b57;
+}
+
+/* =========================================
+   MULTIMÍDIA
+========================================= */
+.midia-item {
+  margin-bottom: 1rem;
+}
+
+video,
+iframe {
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+}
+
+iframe {
+  height: 250px;
+}
+
+/* =========================================
+   GRÁFICOS: CANVAS E SVG
+========================================= */
+canvas {
+  background-color: #fdfdfd;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  display: block;
+  margin: 1rem auto;
+}
+
+.grafico-svg {
+  display: block;
+  margin: 1rem auto;
+}
+
+.barra-svg {
+  transition: opacity 0.3s ease;
+}
+
+.barra-svg:hover {
+  opacity: 0.75;
+}
+
+.rotulo-svg {
+  font-size: 12px;
+  fill: #2b2b2b;
+}
+
+/* =========================================
+   RODAPÉ
+========================================= */
+footer {
+  background-color: #003366;
+  color: #d8e6ff;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #ffcc00;
+}
+
+/* =========================================
+   SELEÇÃO DE TEXTO
+========================================= */
+::selection {
+  background: #004080;
+  color: #fff;
+}
+
+/* =========================================
+   MEDIA QUERIES (MOBILE-FIRST / MIN-WIDTH)
+========================================= */
+
+/* Telas pequenas ampliadas (>= 600px): menu em linha */
+@media (min-width: 600px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  nav ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0.8rem 1rem;
+  }
+
+  nav a {
+    display: inline-block;
+    padding: 0.3rem 0.2rem;
+  }
+
+  .etiquetas li {
+    flex: 1 1 45%;
+  }
+
+  button {
+    width: auto;
+  }
+
+  iframe {
+    height: 320px;
+  }
+}
+
+/* Tablets (>= 768px): layouts em 2 colunas */
+@media (min-width: 768px) {
+  main {
+    margin: 2rem auto;
+  }
+
+  section {
+    padding: 1.5rem;
+  }
+
+  .layout-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .layout-grid > .ocupa-tudo {
+    grid-column: 1 / -1;
+  }
+
+  .etiquetas li {
+    flex: 1 1 100%;
+  }
+
+  form {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: start;
+  }
+
+  form button {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+
+  iframe {
+    height: 400px;
+  }
+}
+
+/* Desktop (>= 1024px): mais espaço e tipografia maior */
+@media (min-width: 1024px) {
+  header {
+    padding: 1.5rem 1rem;
+  }
+
+  header h1 {
+    font-size: 2.2rem;
+  }
+
+  header p {
+    font-size: 1.05rem;
+  }
+
+  .layout-grid {
+    gap: 2rem;
+  }
+}
+
+/* =========================================
+   ACESSIBILIDADE: REDUÇÃO DE MOVIMENTO
+========================================= */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+
+  article:hover,
+  article:focus-within {
+    transform: none;
+  }
+}
+
+/* =========================================
+   CP3: INTERATIVIDADE (JS + localStorage)
+========================================= */
+
+/* Botão de alternar tema (inserido via JS no cabeçalho) */
+.btn-tema {
+  width: auto;
+  margin-top: 0.6rem;
+  padding: 0.4rem 1rem;
+  font-size: 0.9rem;
+  background-color: transparent;
+  border: 2px solid #ffcc00;
+  color: #ffcc00;
+}
+
+.btn-tema:hover {
+  background-color: #ffcc00;
+  color: #003366;
+}
+
+.btn-secundario {
+  background-color: #6b7280;
+  margin-top: 1rem;
+}
+
+.btn-secundario:hover {
+  background-color: #4b5563;
+}
+
+/* Mensagens de erro e feedback do formulário */
+.erro-campo {
+  display: block;
+  color: #b00020;
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+}
+
+.campo-invalido {
+  border-color: #b00020;
+  background-color: #fff5f6;
+}
+
+.feedback {
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.feedback[hidden] {
+  display: none;
+}
+
+.feedback.sucesso {
+  background-color: #e6f4ea;
+  color: #1e6b34;
+  border: 1px solid #1e6b34;
+}
+
+.feedback.erro {
+  background-color: #fdeaea;
+  color: #b00020;
+  border: 1px solid #b00020;
+}
+
+/* Histórico de mensagens salvas */
+.lista-mensagens {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.lista-mensagens li {
+  border: 1px solid #e0e0e0;
+  border-left: 4px solid #004080;
+  border-radius: 6px;
+  padding: 0.8rem 1rem;
+  overflow-wrap: anywhere;
+}
+
+.lista-mensagens small {
+  color: #666;
+}
+
+/* Tema escuro (classe aplicada no <html>) */
+html.tema-escuro body {
+  background-color: #12161c;
+  color: #e6e9ee;
+}
+
+html.tema-escuro a {
+  color: #8ec1ff;
+}
+
+html.tema-escuro section,
+html.tema-escuro article {
+  background-color: #1b2129;
+  border-color: #333b46;
+}
+
+html.tema-escuro section h2,
+html.tema-escuro legend {
+  color: #8ec1ff;
+  border-color: #333b46;
+}
+
+html.tema-escuro .etiquetas li {
+  background-color: #232b35;
+  border-left-color: #8ec1ff;
+}
+
+html.tema-escuro th,
+html.tema-escuro td,
+html.tema-escuro fieldset {
+  border-color: #3a4350;
+}
+
+html.tema-escuro tbody tr:nth-child(even) {
+  background-color: #232b35;
+}
+
+html.tema-escuro caption,
+html.tema-escuro .lista-mensagens small {
+  color: #aab3bf;
+}
+
+html.tema-escuro input,
+html.tema-escuro select,
+html.tema-escuro textarea {
+  background-color: #12161c;
+  color: #e6e9ee;
+  border-color: #4a5463;
+}
+
+html.tema-escuro canvas {
+  background-color: #1b2129;
+  border-color: #333b46;
+}
+
+html.tema-escuro .rotulo-svg {
+  fill: #e6e9ee;
+}
+
+html.tema-escuro .lista-mensagens li {
+  border-color: #333b46;
+  border-left-color: #8ec1ff;
+}
+
+html.tema-escuro .feedback.sucesso {
+  background-color: #17301f;
+  color: #8be0a4;
+  border-color: #8be0a4;
+}
+
+html.tema-escuro .feedback.erro,
+html.tema-escuro .campo-invalido {
+  background-color: #3a1a1f;
+  color: #ff9aa8;
+  border-color: #ff9aa8;
+}
+
+html.tema-escuro .erro-campo {
+  color: #ff9aa8;
+}
+
+.campo-checkbox {
+  flex-wrap: wrap;
+}
