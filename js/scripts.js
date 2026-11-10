@@ -134,8 +134,9 @@ function validarCampo(campo) {
   }
   if (campo.type === 'radio') {
     const grupo = campo.form.querySelectorAll(`input[name="${campo.name}"]`);
-    const ok = Array.from(grupo).some((r) => r.checked) || !campo.required;
-    grupo.forEach((r) => (ok ? limparErro(r) : null));
+    const obrigatorio = Array.from(grupo).some((radio) => radio.required);
+    const ok = Array.from(grupo).some((radio) => radio.checked) || !obrigatorio;
+    if (ok) grupo.forEach(limparErro);
     if (!ok) mostrarErro(grupo[0], 'Escolha uma opção.');
     return ok;
   }
